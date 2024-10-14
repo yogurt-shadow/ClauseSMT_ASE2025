@@ -42,7 +42,7 @@ python generate_list.py ../QF_NRA/
 ```
 The generated absolute paths are stored in `QF_NRA/list.txt` with 12134 lines.
 
-![list](pictures/image-0.png)
+![list](pictures/image-2.png)
 
 ## 3. Compilation and Binary Files
 There are two ways to use our smt solver, either compile the source code or just use the binary files.
@@ -98,7 +98,7 @@ If the user can not get an advanced external server and would like to narrow the
 
 If everything goes well, the `self_data` folder would contain txt files for each instance, each containing the solver's output and statistics.
 
-![data](pictures/image-2.png)
+![data](pictures/image-3.png)
 
 ## 5. Collecting Results
 We provide a script `script/collect.py` to collect the results of all solvers on all test cases, and generate a csv file. The script takes two arguments:
@@ -113,7 +113,7 @@ python collect.py ../self_data/ csv/clauseSMT.csv
 ```
 Then the `csv/clauseSMT.csv` file would contain the results of our solver on all test cases, including the instance name, solver's output, time and memory consumption.
 
-![csv](pictures/image-3.png)
+![csv](pictures/image-4.png)
 
 ## 6. Comparison with our results
 We provide the experimental results of our solver on the whole benchmark in `experiment_data/`. The user can compare their results with ours to see the performance of our solver.
