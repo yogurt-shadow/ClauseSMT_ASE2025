@@ -1,0 +1,5 @@
+/home/wangzh/VMCAI_clauseSMT/benchmark/1.smt2
+/home/wangzh/VMCAI_clauseSMT/benchmark/2.smt2
+/home/wangzh/VMCAI_clauseSMT/benchmark/3.smt2
+/home/wangzh/VMCAI_clauseSMT/benchmark/4.smt2
+/home/wangzh/VMCAI_clauseSMT/benchmark/5.smt2

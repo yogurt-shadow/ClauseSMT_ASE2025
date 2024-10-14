@@ -1,0 +1,856 @@
+mk_clause:
+true
+#1 after sort:
+true
+p: 3 x0^2 x1^2 x2^2 + x1^2 x2^2 - 6 x0 x1 x2^2 + 3 x2^2 - 6 x0 x1^2 x2 - 6 x0^2 x1 x2 + 4 x1 x2 + 6 x0 x2 + 3 x1^2 + 6 x0 x1 + 3 x0^2 + 1, uniq: 0x3e7c9a0
+create: b1 3 x0^2 x1^2 x2^2 + x1^2 x2^2 - 6 x0 x1 x2^2 + 3 x2^2 - 6 x0 x1^2 x2 - 6 x0^2 x1 x2 + 4 x1 x2 + 6 x0 x2 + 3 x1^2 + 6 x0 x1 + 3 x0^2 + 1 > 0
+inc: 1 0 3 x0^2 x1^2 x2^2 + x1^2 x2^2 - 6 x0 x1 x2^2 + 3 x2^2 - 6 x0 x1^2 x2 - 6 x0^2 x1 x2 + 4 x1 x2 + 6 x0 x2 + 3 x1^2 + 6 x0 x1 + 3 x0^2 + 1 > 0
+mk_clause:
+!(3 x0^2 x1^2 x2^2 + x1^2 x2^2 - 6 x0 x1 x2^2 + 3 x2^2 - 6 x0 x1^2 x2 - 6 x0^2 x1 x2 + 4 x1 x2 + 6 x0 x2 + 3 x1^2 + 6 x0 x1 + 3 x0^2 + 1 > 0)
+#1 after sort:
+!(3 x0^2 x1^2 x2^2 + x1^2 x2^2 - 6 x0 x1 x2^2 + 3 x2^2 - 6 x0 x1^2 x2 - 6 x0^2 x1 x2 + 4 x1 x2 + 6 x0 x2 + 3 x1^2 + 6 x0 x1 + 3 x0^2 + 1 > 0)
+p: x0 x1 x2 - x2 - x1 - x0, uniq: 0x3e6d090
+create: b2 x0 x1 x2 - x2 - x1 - x0 > 0
+p: x2, uniq: 0x3e78e28
+create: b3 x2 < 0
+inc: 2 0 x0 x1 x2 - x2 - x1 - x0 > 0
+inc: 3 0 x2 < 0
+mk_clause:
+x0 x1 x2 - x2 - x1 - x0 > 0 or !(x2 < 0)
+#2 after sort:
+x0 x1 x2 - x2 - x1 - x0 > 0 or !(x2 < 0)
+p: x2, uniq: 0x3e78e28
+mk_ineq_atom hash: 2544519863
+x2 < 0
+p: x0 x1 x2 - x1 x2 - x2 - x1 - x0 + 1, uniq: 0x3e733a0
+create: b4 x0 x1 x2 - x1 x2 - x2 - x1 - x0 + 1 < 0
+inc: 3 1 x2 < 0
+inc: 4 0 x0 x1 x2 - x1 x2 - x2 - x1 - x0 + 1 < 0
+mk_clause:
+!(x2 < 0) or !(x0 x1 x2 - x1 x2 - x2 - x1 - x0 + 1 < 0)
+#3 after sort:
+!(x2 < 0) or !(x0 x1 x2 - x1 x2 - x2 - x1 - x0 + 1 < 0)
+p: x2, uniq: 0x3e78e28
+mk_ineq_atom hash: 2544519863
+x2 < 0
+p: x0 x1 x2 - x2 - x1 - x0, uniq: 0x3e6d090
+mk_ineq_atom hash: 2498589943
+x0 x1 x2 - x2 - x1 - x0 > 0
+p: x1^3 x2^2 + 3 x1 x2^2 - x0 x1^3 x2 + 3 x1^2 x2 - 3 x0 x1 x2 + x1^3 + x0 x1^2 + 3 x0, uniq: 0x3e75300
+create: b5 x1^3 x2^2 + 3 x1 x2^2 - x0 x1^3 x2 + 3 x1^2 x2 - 3 x0 x1 x2 + x1^3 + x0 x1^2 + 3 x0 > 0
+inc: 3 2 x2 < 0
+inc: 2 1 x0 x1 x2 - x2 - x1 - x0 > 0
+inc: 5 0 x1^3 x2^2 + 3 x1 x2^2 - x0 x1^3 x2 + 3 x1^2 x2 - 3 x0 x1 x2 + x1^3 + x0 x1^2 + 3 x0 > 0
+mk_clause:
+x2 < 0 or !(x0 x1 x2 - x2 - x1 - x0 > 0) or !(x1^3 x2^2 + 3 x1 x2^2 - x0 x1^3 x2 + 3 x1^2 x2 - 3 x0 x1 x2 + x1^3 + x0 x1^2 + 3 x0 > 0)
+#4 after sort:
+!(x0 x1 x2 - x2 - x1 - x0 > 0) or x2 < 0 or !(x1^3 x2^2 + 3 x1 x2^2 - x0 x1^3 x2 + 3 x1^2 x2 - 3 x0 x1 x2 + x1^3 + x0 x1^2 + 3 x0 > 0)
+p: x0, uniq: 0x3e78d48
+create: b6 x0 > 0
+inc: 6 0 x0 > 0
+mk_clause:
+x0 > 0
+#5 after sort:
+x0 > 0
+p: x1 + 1, uniq: 0x3e66fe0
+create: b7 x1 + 1 > 0
+inc: 7 0 x1 + 1 > 0
+mk_clause:
+x1 + 1 > 0
+#6 after sort:
+x1 + 1 > 0
+p: x2 - 1, uniq: 0x3e670d0
+create: b8 x2 - 1 < 0
+inc: 8 0 x2 - 1 < 0
+mk_clause:
+x2 - 1 < 0
+#7 after sort:
+x2 - 1 < 0
+p: x2 - x1, uniq: 0x3e671c0
+create: b9 x2 - x1 > 0
+inc: 9 0 x2 - x1 > 0
+mk_clause:
+x2 - x1 > 0
+#8 after sort:
+x2 - x1 > 0
+(declare-fun b0 () Bool)
+(declare-fun x0 () Real)
+(declare-fun x1 () Real)
+(declare-fun x2 () Real)
+(assert (and true
+true
+(not (> (+ (* 3 (* x0 x0 x1 x1 x2 x2)) (* (* x1 x1 x2 x2)) (* (- 6) (* x0 x1 x2 x2)) (* 3 (* x2 x2)) (* (- 6) (* x0 x1 x1 x2)) (* (- 6) (* x0 x0 x1 x2)) (* 4 (* x1 x2)) (* 6 (* x0 x2)) (* 3 (* x1 x1)) (* 6 (* x0 x1)) (* 3 (* x0 x0)) 1) 0))
+(or (> (+ (* (* x0 x1 x2)) (* (- 1) x2) (* (- 1) x1) (* (- 1) x0)) 0) (not (< x2 0)))
+(or (not (< x2 0)) (not (< (+ (* (* x0 x1 x2)) (* (- 1) (* x1 x2)) (* (- 1) x2) (* (- 1) x1) (* (- 1) x0) 1) 0)))
+(or (not (> (+ (* (* x0 x1 x2)) (* (- 1) x2) (* (- 1) x1) (* (- 1) x0)) 0)) (< x2 0) (not (> (+ (* (* x1 x1 x1 x2 x2)) (* 3 (* x1 x2 x2)) (* (- 1) (* x0 x1 x1 x1 x2)) (* 3 (* x1 x1 x2)) (* (- 3) (* x0 x1 x2)) (* x1 x1 x1) (* (* x0 x1 x1)) (* 3 x0)) 0)))
+(> x0 0)
+(> (+ x1 1) 0)
+(< (+ x2 (- 1)) 0)
+(> (+ x2 (* (- 1) x1)) 0)
+))
+
+is_full_dimensional: 0
+before:
+!(3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0)
+skoZ skoX skoY - skoY - skoX - skoZ > 0 or !(skoY < 0)
+!(skoY < 0) or !(skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0)
+!(skoZ skoX skoY - skoY - skoX - skoZ > 0) or skoY < 0 or !(skoX^3 skoY^2 + 3 skoX skoY^2 - skoZ skoX^3 skoY + 3 skoX^2 skoY - 3 skoZ skoX skoY + skoX^3 + skoZ skoX^2 + 3 skoZ > 0)
+skoY - 1 < 0
+skoY - skoX > 0
+permutation: 1 2 4 5 0 3
+after:
+skoZ skoX skoY - skoY - skoX - skoZ > 0 or !(skoY < 0)
+!(skoY < 0) or !(skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0)
+skoY - 1 < 0
+skoY - skoX > 0
+!(3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0)
+!(skoZ skoX skoY - skoY - skoX - skoZ > 0) or skoY < 0 or !(skoX^3 skoY^2 + 3 skoX skoY^2 - skoZ skoX^3 skoY + 3 skoX^2 skoY - 3 skoZ skoX skoY + skoX^3 + skoZ skoX^2 + 3 skoZ > 0)
+starting search...
+true
+!(3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0)
+skoZ skoX skoY - skoY - skoX - skoZ > 0 or !(skoY < 0)
+!(skoY < 0) or !(skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0)
+!(skoZ skoX skoY - skoY - skoX - skoZ > 0) or skoY < 0 or !(skoX^3 skoY^2 + 3 skoX skoY^2 - skoZ skoX^3 skoY + 3 skoX^2 skoY - 3 skoZ skoX skoY + skoX^3 + skoZ skoX^2 + 3 skoZ > 0)
+skoZ > 0
+skoX + 1 > 0
+skoY - 1 < 0
+skoY - skoX > 0
+assignment:
+b0 -> l_undef 
+b1 -> l_undef 3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0
+b2 -> l_undef skoZ skoX skoY - skoY - skoX - skoZ > 0
+b3 -> l_undef skoY < 0
+b4 -> l_undef skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0
+b5 -> l_undef skoX^3 skoY^2 + 3 skoX skoY^2 - skoZ skoX^3 skoY + 3 skoX^2 skoY - 3 skoZ skoX skoY + skoX^3 + skoZ skoX^2 + 3 skoZ > 0
+b6 -> l_undef skoZ > 0
+b7 -> l_undef skoX + 1 > 0
+b8 -> l_undef skoY - 1 < 0
+b9 -> l_undef skoY - skoX > 0
+---
+
+var order:
+0 -> skoZ
+1 -> skoX
+2 -> skoY
+ASSERTED
+true
+!(3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0)
+skoZ skoX skoY - skoY - skoX - skoZ > 0 or !(skoY < 0)
+!(skoY < 0) or !(skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0)
+!(skoZ skoX skoY - skoY - skoX - skoZ > 0) or skoY < 0 or !(skoX^3 skoY^2 + 3 skoX skoY^2 - skoZ skoX^3 skoY + 3 skoX^2 skoY - 3 skoZ skoX skoY + skoX^3 + skoZ skoX^2 + 3 skoZ > 0)
+skoZ > 0
+skoX + 1 > 0
+skoY - 1 < 0
+skoY - skoX > 0
+assignment:
+b0 -> l_undef 
+b1 -> l_undef 3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0
+b2 -> l_undef skoZ skoX skoY - skoY - skoX - skoZ > 0
+b3 -> l_undef skoY < 0
+b4 -> l_undef skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0
+b5 -> l_undef skoX^3 skoY^2 + 3 skoX skoY^2 - skoZ skoX^3 skoY + 3 skoX^2 skoY - 3 skoZ skoX skoY + skoX^3 + skoZ skoX^2 + 3 skoZ > 0
+b6 -> l_undef skoZ > 0
+b7 -> l_undef skoX + 1 > 0
+b8 -> l_undef skoY - 1 < 0
+b9 -> l_undef skoY - skoX > 0
+---
+ASSERTED
+b0
+!b1
+b2 or !b3
+!b3 or !b4
+!b2 or b3 or !b5
+b6
+b7
+b8
+b9
+{
+ ((0 < 1)),
+ (!(3*x0^2*x1^2*x2^2 + x1^2*x2^2 - 6*x0*x1*x2^2 + 3*x2^2 - 6*x0*x1^2*x2 - 6*x0^2*x1*x2 + 4*x1*x2 + 6*x0*x2 + 3*x1^2 + 6*x0*x1 + 3*x0^2 + 1 > 0)),
+ (x0*x1*x2 - x2 - x1 - x0 > 0 || !(x2 < 0)),
+ (!(x2 < 0) || !(x0*x1*x2 - x1*x2 - x2 - x1 - x0 + 1 < 0)),
+ (!(x0*x1*x2 - x2 - x1 - x0 > 0) || x2 < 0 || !(x1^3*x2^2 + 3*x1*x2^2 - x0*x1^3*x2 + 3*x1^2*x2 - 3*x0*x1*x2 + x1^3 + x0*x1^2 + 3*x0 > 0)),
+ (x0 > 0),
+ (x1 + 1 > 0),
+ (x2 - 1 < 0),
+ (x2 - x1 > 0)}
+(declare-fun b0 () Bool)
+(declare-fun x0 () Real)
+(declare-fun x1 () Real)
+(declare-fun x2 () Real)
+(assert (and true
+true
+(not (> (+ (* 3 (* x0 x0 x1 x1 x2 x2)) (* (* x1 x1 x2 x2)) (* (- 6) (* x0 x1 x2 x2)) (* 3 (* x2 x2)) (* (- 6) (* x0 x1 x1 x2)) (* (- 6) (* x0 x0 x1 x2)) (* 4 (* x1 x2)) (* 6 (* x0 x2)) (* 3 (* x1 x1)) (* 6 (* x0 x1)) (* 3 (* x0 x0)) 1) 0))
+(or (> (+ (* (* x0 x1 x2)) (* (- 1) x2) (* (- 1) x1) (* (- 1) x0)) 0) (not (< x2 0)))
+(or (not (< x2 0)) (not (< (+ (* (* x0 x1 x2)) (* (- 1) (* x1 x2)) (* (- 1) x2) (* (- 1) x1) (* (- 1) x0) 1) 0)))
+(or (not (> (+ (* (* x0 x1 x2)) (* (- 1) x2) (* (- 1) x1) (* (- 1) x0)) 0)) (< x2 0) (not (> (+ (* (* x1 x1 x1 x2 x2)) (* 3 (* x1 x2 x2)) (* (- 1) (* x0 x1 x1 x1 x2)) (* 3 (* x1 x1 x2)) (* (- 3) (* x0 x1 x2)) (* x1 x1 x1) (* (* x0 x1 x1)) (* 3 x0)) 0)))
+(> x0 0)
+(> (+ x1 1) 0)
+(< (+ x2 (- 1)) 0)
+(> (+ x2 (* (- 1) x1)) 0)
+))
+
+xk: x4294967295 bk: b0
+processing variable 1 boolean b0
+ no atom for true
+ no atom for true
+assigning literal: true <- true
+b0 -> l_true
+xk: x0 bk: b2147483647
+processing variable skoZ 1
+ maximal variable not assigned skoZ > 0
+ maximal variable not assigned skoZ > 0
+ maximal variable not assigned skoZ > 0
+ maximal variable not assigned skoZ > 0
+infeasible set for literal: skoZ > 0
+{(-oo, p6, 0]}
+skoZ > 0
+num_undef: 1
+assigning literal: skoZ > 0 <- skoZ > 0
+b6 -> l_true
+updating infeasible set
+{}
+{(-oo, p6, 0]}
+new infeasible set:
+{(-oo, p6, 0]}
+infeasible intervals: {(-oo, p6, 0]}
+assigning skoZ(x0) -> 1
+value as root object: (# - 1, 1)
+xk: x1 bk: b2147483647
+processing variable skoX 1
+ maximal variable not assigned skoX + 1 > 0
+ maximal variable not assigned skoX + 1 > 0
+ maximal variable not assigned skoX + 1 > 0
+ maximal variable not assigned skoX + 1 > 0
+infeasible set for literal: skoX + 1 > 0
+{(-oo, p7, -1]}
+skoX + 1 > 0
+num_undef: 1
+assigning literal: skoX + 1 > 0 <- skoX + 1 > 0
+b7 -> l_true
+updating infeasible set
+{}
+{(-oo, p7, -1]}
+new infeasible set:
+{(-oo, p7, -1]}
+infeasible intervals: {(-oo, p7, -1]}
+assigning skoX(x1) -> 0
+value as root object: (#, 1)
+xk: x2 bk: b2147483647
+processing variable skoY 6
+ maximal variable not assigned skoZ skoX skoY - skoY - skoX - skoZ > 0
+ maximal variable not assigned !(skoY < 0)
+ maximal variable not assigned skoZ skoX skoY - skoY - skoX - skoZ > 0
+ maximal variable not assigned skoZ skoX skoY - skoY - skoX - skoZ > 0
+ maximal variable not assigned skoZ skoX skoY - skoY - skoX - skoZ > 0
+infeasible set for literal: skoZ skoX skoY - skoY - skoX - skoZ > 0
+{[-1, p2, oo)}
+skoZ skoX skoY - skoY - skoX - skoZ > 0 or !(skoY < 0)
+ maximal variable not assigned !(skoY < 0)
+ maximal variable not assigned !(skoY < 0)
+ maximal variable not assigned !(skoY < 0)
+infeasible set for literal: !(skoY < 0)
+{(-oo, ~p3, 0)}
+skoZ skoX skoY - skoY - skoX - skoZ > 0 or !(skoY < 0)
+num_undef: 2
+assigning literal: skoZ skoX skoY - skoY - skoX - skoZ > 0 <- decision
+b2 -> l_true
+updating infeasible set
+{}
+{[-1, p2, oo)}
+new infeasible set:
+{[-1, p2, oo)}
+ maximal variable not assigned !(skoY < 0)
+ maximal variable not assigned !(skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0)
+ maximal variable not assigned !(skoY < 0)
+ maximal variable not assigned !(skoY < 0)
+ maximal variable not assigned !(skoY < 0)
+infeasible set for literal: !(skoY < 0)
+{(-oo, ~p3, 0)}
+!(skoY < 0) or !(skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0)
+infeasible set + current set = R, skip literal
+!(skoY < 0) or !(skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0)
+assigning literal: skoY < 0 <- skoY < 0 or !(skoZ skoX skoY - skoY - skoX - skoZ > 0)
+b3 -> l_true
+ maximal variable not assigned !(skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0)
+ maximal variable not assigned !(skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0)
+ maximal variable not assigned !(skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0)
+infeasible set for literal: !(skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0)
+{(0, ~p4, oo)}
+!(skoY < 0) or !(skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0)
+infeasible set is a subset of current set, found literal
+assigning literal: !(skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0) <- !(skoZ skoX skoY - skoY - skoX - skoZ > 0) or !(skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0)
+skoZ skoX skoY - skoY - skoX - skoZ > 0 or !(skoY < 0)
+b4 -> l_false
+ maximal variable not assigned skoY - 1 < 0
+ maximal variable not assigned skoY - 1 < 0
+ maximal variable not assigned skoY - 1 < 0
+ maximal variable not assigned skoY - 1 < 0
+infeasible set for literal: skoY - 1 < 0
+{[1, p8, oo)}
+skoY - 1 < 0
+infeasible set is a subset of current set, found literal
+assigning literal: skoY - 1 < 0 <- !(skoZ skoX skoY - skoY - skoX - skoZ > 0) or skoY - 1 < 0
+skoZ skoX skoY - skoY - skoX - skoZ > 0 or !(skoY < 0)
+b8 -> l_true
+ maximal variable not assigned skoY - skoX > 0
+ maximal variable not assigned skoY - skoX > 0
+ maximal variable not assigned skoY - skoX > 0
+ maximal variable not assigned skoY - skoX > 0
+infeasible set for literal: skoY - skoX > 0
+{(-oo, p9, 0]}
+skoY - skoX > 0
+infeasible set + current set = R, skip literal
+skoY - skoX > 0
+assigning literal: !(skoY - skoX > 0) <- !(skoY - skoX > 0) or !(skoZ skoX skoY - skoY - skoX - skoZ > 0)
+b9 -> l_false
+num_undef: 0
+STARTING RESOLUTION
+STARTING RESOLUTION
+resolve, conflicting clause:
+skoY - skoX > 0
+xk: skoY
+scope_lvl: 1
+current assignment
+b0 -> true
+b2 skoZ skoX skoY - skoY - skoX - skoZ > 0 -> true
+b3 skoY < 0 -> true
+b4 skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0 -> false
+b6 skoZ > 0 -> true
+b7 skoX + 1 > 0 -> true
+b8 skoY - 1 < 0 -> true
+b9 skoY - skoX > 0 -> false
+b0 -> l_true 
+b1 -> l_undef 3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0
+b2 -> l_true skoZ skoX skoY - skoY - skoX - skoZ > 0
+b3 -> l_true skoY < 0
+b4 -> l_false skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0
+b5 -> l_undef skoX^3 skoY^2 + 3 skoX skoY^2 - skoZ skoX^3 skoY + 3 skoX^2 skoY - 3 skoZ skoX skoY + skoX^3 + skoZ skoX^2 + 3 skoZ > 0
+b6 -> l_true skoZ > 0
+b7 -> l_true skoX + 1 > 0
+b8 -> l_true skoY - 1 < 0
+b9 -> l_false skoY - skoX > 0
+skoZ -> 1
+skoX -> 0
+resolving clause for b: 2147483647
+skoY - skoX > 0
+resolving skoY - skoX > 0
+resolving 
+b9
+resolving antecedent: skoY - skoX > 0
+b_lvl: 1, is_marked(b): 0, m_num_marks: 0
+literal is in the same level and stage, increasing marks
+found marked: b9
+skoY - skoX > 0
+resolving lazy_justification for b9
+assignment lemma
+Resolve[ForAll[{x0, x1, x2}, !(x0 == 1 && x1 == 0) || !(x2 - x1 > 0) || !(x0*x1*x2 - x2 - x1 - x0 > 0)], Reals]
+enter explain: skoY - skoX > 0 or skoZ skoX skoY - skoY - skoX - skoZ > 0
+inc: 9 1 skoY - skoX > 0
+inc: 2 2 skoZ skoX skoY - skoY - skoX - skoZ > 0
+inc: 9 2 skoY - skoX > 0
+dec: 9 2 skoY - skoX > 0
+inc: 2 3 skoZ skoX skoY - skoY - skoX - skoZ > 0
+dec: 2 3 skoZ skoX skoY - skoY - skoX - skoZ > 0
+p: 4 x0^2 + 4, uniq: 0x3e67120
+create: b10 4 skoZ^2 + 4 > 0
+inc: 10 0 4 skoZ^2 + 4 > 0
+p: x0, uniq: 0x3e78d48
+mk_ineq_atom hash: 2099698683
+skoZ > 0
+inc: 6 1 skoZ > 0
+p: x0 x1 - 1, uniq: 0x3e67080
+create: b11 skoZ skoX - 1 < 0
+inc: 11 0 skoZ skoX - 1 < 0
+p: x0 x1^2 - 2 x1 - x0, uniq: 0x3e690c0
+create: b12 skoZ skoX^2 - 2 skoX - skoZ < 0
+inc: 12 0 skoZ skoX^2 - 2 skoX - skoZ < 0
+1 x0 x1 - 1 x0 x1 - 1
+inc: 13 0 skoX < root[1](skoZ skoX - 1)
+p: x0, uniq: 0x3e78d48
+mk_ineq_atom hash: 2099698683
+skoZ > 0
+dec: 9 1 skoY - skoX > 0
+dec: 2 2 skoZ skoX skoY - skoY - skoX - skoZ > 0
+inc: 9 1 skoY - skoX > 0
+inc: 2 2 skoZ skoX skoY - skoY - skoX - skoZ > 0
+Resolve[ForAll[{x0, x1, x2}, !(4*x0^2 + 4 > 0) || !(x0 > 0) || !(x0*x1 - 1 < 0) || !(x0*x1^2 - 2*x1 - x0 < 0) || !(x1 < Root[x0*#1 - 1 &, 1]) || !(x2 - x1 > 0) || !(x0*x1*x2 - x2 - x1 - x0 > 0)], Reals]
+theory lemma
+!b10 or !b6 or !b11 or !b12 or !b13 or !b9 or !b2
+m_xk: 2, skoY
+new valid clause:
+!(4 skoZ^2 + 4 > 0) or !(skoZ > 0) or !(skoZ skoX - 1 < 0) or !(skoZ skoX^2 - 2 skoX - skoZ < 0) or !(skoX < root[1](skoZ skoX - 1)) or !(skoY - skoX > 0) or !(skoZ skoX skoY - skoY - skoX - skoZ > 0)
+resolving skoY - skoX > 0
+!(4 skoZ^2 + 4 > 0) or !(skoZ > 0) or !(skoZ skoX - 1 < 0) or !(skoZ skoX^2 - 2 skoX - skoZ < 0) or !(skoX < root[1](skoZ skoX - 1)) or !(skoY - skoX > 0) or !(skoZ skoX skoY - skoY - skoX - skoZ > 0)
+resolving b9
+!b10 or !b6 or !b11 or !b12 or !b13 or !b9 or !b2
+resolving antecedent: !(4 skoZ^2 + 4 > 0)
+literal is unassigned, but it is false in arithmetic interpretation, adding it to lemma
+inc: 10 1 4 skoZ^2 + 4 > 0
+resolving antecedent: !(skoZ > 0)
+b_lvl: 0, is_marked(b): 0, m_num_marks: 0
+previous level or stage, adding literal to lemma
+max_var(b): 0, m_xk: 2, lvl: 0, scope_lvl: 1
+inc: 6 2 skoZ > 0
+resolving antecedent: !(skoZ skoX - 1 < 0)
+literal is unassigned, but it is false in arithmetic interpretation, adding it to lemma
+inc: 11 1 skoZ skoX - 1 < 0
+resolving antecedent: !(skoZ skoX^2 - 2 skoX - skoZ < 0)
+literal is unassigned, but it is false in arithmetic interpretation, adding it to lemma
+inc: 12 1 skoZ skoX^2 - 2 skoX - skoZ < 0
+resolving antecedent: !(skoX < root[1](skoZ skoX - 1))
+literal is unassigned, but it is false in arithmetic interpretation, adding it to lemma
+inc: 13 1 skoX < root[1](skoZ skoX - 1)
+resolving antecedent: !(skoZ skoX skoY - skoY - skoX - skoZ > 0)
+b_lvl: 1, is_marked(b): 0, m_num_marks: 0
+literal is in the same level and stage, increasing marks
+found marked: b2
+skoZ skoX skoY - skoY - skoX - skoZ > 0
+found decision
+inc: 2 3 skoZ skoX skoY - skoY - skoX - skoZ > 0
+New lemma
+!(4 skoZ^2 + 4 > 0) or !(skoZ > 0) or !(skoZ skoX - 1 < 0) or !(skoZ skoX^2 - 2 skoX - skoZ < 0) or !(skoX < root[1](skoZ skoX - 1)) or !(skoZ skoX skoY - skoY - skoX - skoZ > 0)
+=========================
+New lemma
+!b10 or !b6 or !b11 or !b12 or !b13 or !b2
+=========================
+new lemma:
+!(4 skoZ^2 + 4 > 0) or !(skoZ > 0) or !(skoZ skoX - 1 < 0) or !(skoZ skoX^2 - 2 skoX - skoZ < 0) or !(skoX < root[1](skoZ skoX - 1)) or !(skoZ skoX skoY - skoY - skoX - skoZ > 0)
+found_decision: 1
+fail to find new lvl, using previous one
+backtracking to new level: 0, curr: 1
+inc: 10 2 4 skoZ^2 + 4 > 0
+inc: 6 3 skoZ > 0
+inc: 11 2 skoZ skoX - 1 < 0
+inc: 12 2 skoZ skoX^2 - 2 skoX - skoZ < 0
+inc: 13 2 skoX < root[1](skoZ skoX - 1)
+inc: 2 4 skoZ skoX skoY - skoY - skoX - skoZ > 0
+mk_clause:
+!(4 skoZ^2 + 4 > 0) or !(skoZ > 0) or !(skoZ skoX - 1 < 0) or !(skoZ skoX^2 - 2 skoX - skoZ < 0) or !(skoX < root[1](skoZ skoX - 1)) or !(skoZ skoX skoY - skoY - skoX - skoZ > 0)
+#9 after sort:
+!(skoZ > 0) or !(4 skoZ^2 + 4 > 0) or !(skoZ skoX - 1 < 0) or !(skoX < root[1](skoZ skoX - 1)) or !(skoZ skoX^2 - 2 skoX - skoZ < 0) or !(skoZ skoX skoY - skoY - skoX - skoZ > 0)
+ assigned value l_false for !(skoZ > 0)
+ evaluated value l_false for !(4 skoZ^2 + 4 > 0)
+value of: !(4 skoZ^2 + 4 > 0) := l_false
+xk: 2, a->max_var(): 0
+b0 -> true
+b6 skoZ > 0 -> true
+b7 skoX + 1 > 0 -> true
+b0 -> l_true 
+b1 -> l_undef 3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0
+b2 -> l_undef skoZ skoX skoY - skoY - skoX - skoZ > 0
+b3 -> l_undef skoY < 0
+b4 -> l_undef skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0
+b5 -> l_undef skoX^3 skoY^2 + 3 skoX skoY^2 - skoZ skoX^3 skoY + 3 skoX^2 skoY - 3 skoZ skoX skoY + skoX^3 + skoZ skoX^2 + 3 skoZ > 0
+b6 -> l_true skoZ > 0
+b7 -> l_true skoX + 1 > 0
+b8 -> l_undef skoY - 1 < 0
+b9 -> l_undef skoY - skoX > 0
+b10 -> l_undef 4 skoZ^2 + 4 > 0
+b11 -> l_undef skoZ skoX - 1 < 0
+b12 -> l_undef skoZ skoX^2 - 2 skoX - skoZ < 0
+b13 -> l_undef skoX < root[1](skoZ skoX - 1)
+skoZ -> 1
+skoX -> 0
+ evaluated value l_false for !(skoZ skoX - 1 < 0)
+value of: !(skoZ skoX - 1 < 0) := l_false
+xk: 2, a->max_var(): 1
+b0 -> true
+b6 skoZ > 0 -> true
+b7 skoX + 1 > 0 -> true
+b0 -> l_true 
+b1 -> l_undef 3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0
+b2 -> l_undef skoZ skoX skoY - skoY - skoX - skoZ > 0
+b3 -> l_undef skoY < 0
+b4 -> l_undef skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0
+b5 -> l_undef skoX^3 skoY^2 + 3 skoX skoY^2 - skoZ skoX^3 skoY + 3 skoX^2 skoY - 3 skoZ skoX skoY + skoX^3 + skoZ skoX^2 + 3 skoZ > 0
+b6 -> l_true skoZ > 0
+b7 -> l_true skoX + 1 > 0
+b8 -> l_undef skoY - 1 < 0
+b9 -> l_undef skoY - skoX > 0
+b10 -> l_undef 4 skoZ^2 + 4 > 0
+b11 -> l_undef skoZ skoX - 1 < 0
+b12 -> l_undef skoZ skoX^2 - 2 skoX - skoZ < 0
+b13 -> l_undef skoX < root[1](skoZ skoX - 1)
+skoZ -> 1
+skoX -> 0
+ evaluated value l_false for !(skoX < root[1](skoZ skoX - 1))
+value of: !(skoX < root[1](skoZ skoX - 1)) := l_false
+xk: 2, a->max_var(): 1
+b0 -> true
+b6 skoZ > 0 -> true
+b7 skoX + 1 > 0 -> true
+b0 -> l_true 
+b1 -> l_undef 3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0
+b2 -> l_undef skoZ skoX skoY - skoY - skoX - skoZ > 0
+b3 -> l_undef skoY < 0
+b4 -> l_undef skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0
+b5 -> l_undef skoX^3 skoY^2 + 3 skoX skoY^2 - skoZ skoX^3 skoY + 3 skoX^2 skoY - 3 skoZ skoX skoY + skoX^3 + skoZ skoX^2 + 3 skoZ > 0
+b6 -> l_true skoZ > 0
+b7 -> l_true skoX + 1 > 0
+b8 -> l_undef skoY - 1 < 0
+b9 -> l_undef skoY - skoX > 0
+b10 -> l_undef 4 skoZ^2 + 4 > 0
+b11 -> l_undef skoZ skoX - 1 < 0
+b12 -> l_undef skoZ skoX^2 - 2 skoX - skoZ < 0
+b13 -> l_undef skoX < root[1](skoZ skoX - 1)
+skoZ -> 1
+skoX -> 0
+ evaluated value l_false for !(skoZ skoX^2 - 2 skoX - skoZ < 0)
+value of: !(skoZ skoX^2 - 2 skoX - skoZ < 0) := l_false
+xk: 2, a->max_var(): 1
+b0 -> true
+b6 skoZ > 0 -> true
+b7 skoX + 1 > 0 -> true
+b0 -> l_true 
+b1 -> l_undef 3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0
+b2 -> l_undef skoZ skoX skoY - skoY - skoX - skoZ > 0
+b3 -> l_undef skoY < 0
+b4 -> l_undef skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0
+b5 -> l_undef skoX^3 skoY^2 + 3 skoX skoY^2 - skoZ skoX^3 skoY + 3 skoX^2 skoY - 3 skoZ skoX skoY + skoX^3 + skoZ skoX^2 + 3 skoZ > 0
+b6 -> l_true skoZ > 0
+b7 -> l_true skoX + 1 > 0
+b8 -> l_undef skoY - 1 < 0
+b9 -> l_undef skoY - skoX > 0
+b10 -> l_undef 4 skoZ^2 + 4 > 0
+b11 -> l_undef skoZ skoX - 1 < 0
+b12 -> l_undef skoZ skoX^2 - 2 skoX - skoZ < 0
+b13 -> l_undef skoX < root[1](skoZ skoX - 1)
+skoZ -> 1
+skoX -> 0
+ maximal variable not assigned !(skoZ skoX skoY - skoY - skoX - skoZ > 0)
+ assigned value l_false for !(skoZ > 0)
+ evaluated value l_false for !(4 skoZ^2 + 4 > 0)
+value of: !(4 skoZ^2 + 4 > 0) := l_false
+xk: 2, a->max_var(): 0
+b0 -> true
+b6 skoZ > 0 -> true
+b7 skoX + 1 > 0 -> true
+b0 -> l_true 
+b1 -> l_undef 3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0
+b2 -> l_undef skoZ skoX skoY - skoY - skoX - skoZ > 0
+b3 -> l_undef skoY < 0
+b4 -> l_undef skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0
+b5 -> l_undef skoX^3 skoY^2 + 3 skoX skoY^2 - skoZ skoX^3 skoY + 3 skoX^2 skoY - 3 skoZ skoX skoY + skoX^3 + skoZ skoX^2 + 3 skoZ > 0
+b6 -> l_true skoZ > 0
+b7 -> l_true skoX + 1 > 0
+b8 -> l_undef skoY - 1 < 0
+b9 -> l_undef skoY - skoX > 0
+b10 -> l_undef 4 skoZ^2 + 4 > 0
+b11 -> l_undef skoZ skoX - 1 < 0
+b12 -> l_undef skoZ skoX^2 - 2 skoX - skoZ < 0
+b13 -> l_undef skoX < root[1](skoZ skoX - 1)
+skoZ -> 1
+skoX -> 0
+ evaluated value l_false for !(skoZ skoX - 1 < 0)
+value of: !(skoZ skoX - 1 < 0) := l_false
+xk: 2, a->max_var(): 1
+b0 -> true
+b6 skoZ > 0 -> true
+b7 skoX + 1 > 0 -> true
+b0 -> l_true 
+b1 -> l_undef 3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0
+b2 -> l_undef skoZ skoX skoY - skoY - skoX - skoZ > 0
+b3 -> l_undef skoY < 0
+b4 -> l_undef skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0
+b5 -> l_undef skoX^3 skoY^2 + 3 skoX skoY^2 - skoZ skoX^3 skoY + 3 skoX^2 skoY - 3 skoZ skoX skoY + skoX^3 + skoZ skoX^2 + 3 skoZ > 0
+b6 -> l_true skoZ > 0
+b7 -> l_true skoX + 1 > 0
+b8 -> l_undef skoY - 1 < 0
+b9 -> l_undef skoY - skoX > 0
+b10 -> l_undef 4 skoZ^2 + 4 > 0
+b11 -> l_undef skoZ skoX - 1 < 0
+b12 -> l_undef skoZ skoX^2 - 2 skoX - skoZ < 0
+b13 -> l_undef skoX < root[1](skoZ skoX - 1)
+skoZ -> 1
+skoX -> 0
+ evaluated value l_false for !(skoX < root[1](skoZ skoX - 1))
+value of: !(skoX < root[1](skoZ skoX - 1)) := l_false
+xk: 2, a->max_var(): 1
+b0 -> true
+b6 skoZ > 0 -> true
+b7 skoX + 1 > 0 -> true
+b0 -> l_true 
+b1 -> l_undef 3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0
+b2 -> l_undef skoZ skoX skoY - skoY - skoX - skoZ > 0
+b3 -> l_undef skoY < 0
+b4 -> l_undef skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0
+b5 -> l_undef skoX^3 skoY^2 + 3 skoX skoY^2 - skoZ skoX^3 skoY + 3 skoX^2 skoY - 3 skoZ skoX skoY + skoX^3 + skoZ skoX^2 + 3 skoZ > 0
+b6 -> l_true skoZ > 0
+b7 -> l_true skoX + 1 > 0
+b8 -> l_undef skoY - 1 < 0
+b9 -> l_undef skoY - skoX > 0
+b10 -> l_undef 4 skoZ^2 + 4 > 0
+b11 -> l_undef skoZ skoX - 1 < 0
+b12 -> l_undef skoZ skoX^2 - 2 skoX - skoZ < 0
+b13 -> l_undef skoX < root[1](skoZ skoX - 1)
+skoZ -> 1
+skoX -> 0
+ evaluated value l_false for !(skoZ skoX^2 - 2 skoX - skoZ < 0)
+value of: !(skoZ skoX^2 - 2 skoX - skoZ < 0) := l_false
+xk: 2, a->max_var(): 1
+b0 -> true
+b6 skoZ > 0 -> true
+b7 skoX + 1 > 0 -> true
+b0 -> l_true 
+b1 -> l_undef 3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0
+b2 -> l_undef skoZ skoX skoY - skoY - skoX - skoZ > 0
+b3 -> l_undef skoY < 0
+b4 -> l_undef skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0
+b5 -> l_undef skoX^3 skoY^2 + 3 skoX skoY^2 - skoZ skoX^3 skoY + 3 skoX^2 skoY - 3 skoZ skoX skoY + skoX^3 + skoZ skoX^2 + 3 skoZ > 0
+b6 -> l_true skoZ > 0
+b7 -> l_true skoX + 1 > 0
+b8 -> l_undef skoY - 1 < 0
+b9 -> l_undef skoY - skoX > 0
+b10 -> l_undef 4 skoZ^2 + 4 > 0
+b11 -> l_undef skoZ skoX - 1 < 0
+b12 -> l_undef skoZ skoX^2 - 2 skoX - skoZ < 0
+b13 -> l_undef skoX < root[1](skoZ skoX - 1)
+skoZ -> 1
+skoX -> 0
+ maximal variable not assigned !(skoZ skoX skoY - skoY - skoX - skoZ > 0)
+ maximal variable not assigned !(skoZ skoX skoY - skoY - skoX - skoZ > 0)
+ maximal variable not assigned !(skoZ skoX skoY - skoY - skoX - skoZ > 0)
+infeasible set for literal: !(skoZ skoX skoY - skoY - skoX - skoZ > 0)
+{(-oo, ~p2, -1)}
+!(skoZ > 0) or !(4 skoZ^2 + 4 > 0) or !(skoZ skoX - 1 < 0) or !(skoX < root[1](skoZ skoX - 1)) or !(skoZ skoX^2 - 2 skoX - skoZ < 0) or !(skoZ skoX skoY - skoY - skoX - skoZ > 0)
+num_undef: 1
+assigning literal: !(skoZ skoX skoY - skoY - skoX - skoZ > 0) <- !(skoZ > 0) or !(4 skoZ^2 + 4 > 0) or !(skoZ skoX - 1 < 0) or !(skoX < root[1](skoZ skoX - 1)) or !(skoZ skoX^2 - 2 skoX - skoZ < 0) or !(skoZ skoX skoY - skoY - skoX - skoZ > 0)
+b2 -> l_false
+updating infeasible set
+{}
+{(-oo, ~p2, -1)}
+new infeasible set:
+{(-oo, ~p2, -1)}
+new lemma processed done
+b0 -> true
+b2 skoZ skoX skoY - skoY - skoX - skoZ > 0 -> false
+b6 skoZ > 0 -> true
+b7 skoX + 1 > 0 -> true
+b0 -> l_true 
+b1 -> l_undef 3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0
+b2 -> l_false skoZ skoX skoY - skoY - skoX - skoZ > 0
+b3 -> l_undef skoY < 0
+b4 -> l_undef skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0
+b5 -> l_undef skoX^3 skoY^2 + 3 skoX skoY^2 - skoZ skoX^3 skoY + 3 skoX^2 skoY - 3 skoZ skoX skoY + skoX^3 + skoZ skoX^2 + 3 skoZ > 0
+b6 -> l_true skoZ > 0
+b7 -> l_true skoX + 1 > 0
+b8 -> l_undef skoY - 1 < 0
+b9 -> l_undef skoY - skoX > 0
+b10 -> l_undef 4 skoZ^2 + 4 > 0
+b11 -> l_undef skoZ skoX - 1 < 0
+b12 -> l_undef skoZ skoX^2 - 2 skoX - skoZ < 0
+b13 -> l_undef skoX < root[1](skoZ skoX - 1)
+skoZ -> 1
+skoX -> 0
+processing variable skoY 7
+ assigned value l_false for skoZ skoX skoY - skoY - skoX - skoZ > 0
+ maximal variable not assigned !(skoY < 0)
+ assigned value l_false for skoZ skoX skoY - skoY - skoX - skoZ > 0
+ maximal variable not assigned !(skoY < 0)
+ maximal variable not assigned !(skoY < 0)
+ maximal variable not assigned !(skoY < 0)
+infeasible set for literal: !(skoY < 0)
+{(-oo, ~p3, 0)}
+skoZ skoX skoY - skoY - skoX - skoZ > 0 or !(skoY < 0)
+num_undef: 1
+assigning literal: !(skoY < 0) <- skoZ skoX skoY - skoY - skoX - skoZ > 0 or !(skoY < 0)
+b3 -> l_false
+updating infeasible set
+{(-oo, ~p2, -1)}
+{(-oo, ~p3, 0)}
+new infeasible set:
+{(-oo, ~p3, 0)}
+ assigned value l_true for !(skoY < 0)
+-3 := true
+ maximal variable not assigned skoY - 1 < 0
+ maximal variable not assigned skoY - 1 < 0
+ maximal variable not assigned skoY - 1 < 0
+ maximal variable not assigned skoY - 1 < 0
+infeasible set for literal: skoY - 1 < 0
+{[1, p8, oo)}
+skoY - 1 < 0
+num_undef: 1
+assigning literal: skoY - 1 < 0 <- skoY - 1 < 0
+b8 -> l_true
+updating infeasible set
+{(-oo, ~p3, 0)}
+{[1, p8, oo)}
+new infeasible set:
+{(-oo, ~p3, 0), [1, p8, oo)}
+ maximal variable not assigned skoY - skoX > 0
+ maximal variable not assigned skoY - skoX > 0
+ maximal variable not assigned skoY - skoX > 0
+ maximal variable not assigned skoY - skoX > 0
+infeasible set for literal: skoY - skoX > 0
+{(-oo, p9, 0]}
+skoY - skoX > 0
+num_undef: 1
+assigning literal: skoY - skoX > 0 <- skoY - skoX > 0
+b9 -> l_true
+updating infeasible set
+{(-oo, ~p3, 0), [1, p8, oo)}
+{(-oo, p9, 0]}
+new infeasible set:
+{(-oo, p9, 0], [1, p8, oo)}
+ maximal variable not assigned !(3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0)
+ maximal variable not assigned !(3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0)
+ maximal variable not assigned !(3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0)
+ maximal variable not assigned !(3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0)
+infeasible set for literal: !(3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0)
+{(-oo, ~p1, oo)}*
+!(3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0)
+infeasible set is R, skip literal
+assigning literal: 3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0 <- 3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0
+b1 -> l_true
+num_undef: 0
+STARTING RESOLUTION
+STARTING RESOLUTION
+resolve, conflicting clause:
+!(3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0)
+xk: skoY
+scope_lvl: 0
+current assignment
+b0 -> true
+b1 3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0 -> true
+b2 skoZ skoX skoY - skoY - skoX - skoZ > 0 -> false
+b3 skoY < 0 -> false
+b6 skoZ > 0 -> true
+b7 skoX + 1 > 0 -> true
+b8 skoY - 1 < 0 -> true
+b9 skoY - skoX > 0 -> true
+b0 -> l_true 
+b1 -> l_true 3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0
+b2 -> l_false skoZ skoX skoY - skoY - skoX - skoZ > 0
+b3 -> l_false skoY < 0
+b4 -> l_undef skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0
+b5 -> l_undef skoX^3 skoY^2 + 3 skoX skoY^2 - skoZ skoX^3 skoY + 3 skoX^2 skoY - 3 skoZ skoX skoY + skoX^3 + skoZ skoX^2 + 3 skoZ > 0
+b6 -> l_true skoZ > 0
+b7 -> l_true skoX + 1 > 0
+b8 -> l_true skoY - 1 < 0
+b9 -> l_true skoY - skoX > 0
+b10 -> l_undef 4 skoZ^2 + 4 > 0
+b11 -> l_undef skoZ skoX - 1 < 0
+b12 -> l_undef skoZ skoX^2 - 2 skoX - skoZ < 0
+b13 -> l_undef skoX < root[1](skoZ skoX - 1)
+skoZ -> 1
+skoX -> 0
+dec: 10 2 4 skoZ^2 + 4 > 0
+dec: 6 3 skoZ > 0
+dec: 11 2 skoZ skoX - 1 < 0
+dec: 12 2 skoZ skoX^2 - 2 skoX - skoZ < 0
+dec: 13 2 skoX < root[1](skoZ skoX - 1)
+dec: 2 4 skoZ skoX skoY - skoY - skoX - skoZ > 0
+resolving clause for b: 2147483647
+!(3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0)
+resolving !(3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0)
+resolving 
+!b1
+resolving antecedent: !(3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0)
+b_lvl: 0, is_marked(b): 0, m_num_marks: 0
+literal is in the same level and stage, increasing marks
+found marked: b1
+3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0
+resolving lazy_justification for b1
+assignment lemma
+Resolve[ForAll[{x0, x1, x2}, !(x0 == 1 && x1 == 0) || 3*x0^2*x1^2*x2^2 + x1^2*x2^2 - 6*x0*x1*x2^2 + 3*x2^2 - 6*x0*x1^2*x2 - 6*x0^2*x1*x2 + 4*x1*x2 + 6*x0*x2 + 3*x1^2 + 6*x0*x1 + 3*x0^2 + 1 > 0], Reals]
+dec: 10 1 4 skoZ^2 + 4 > 0
+dec: 6 2 skoZ > 0
+dec: 11 1 skoZ skoX - 1 < 0
+dec: 12 1 skoZ skoX^2 - 2 skoX - skoZ < 0
+dec: 13 1 skoX < root[1](skoZ skoX - 1)
+dec: 9 1 skoY - skoX > 0
+dec: 2 3 skoZ skoX skoY - skoY - skoX - skoZ > 0
+enter explain: !(3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0)
+inc: 1 1 3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0
+inc: 1 2 3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0
+dec: 1 2 3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0
+dec: 1 1 3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0
+inc: 1 1 3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0
+Resolve[ForAll[{x0, x1, x2}, 3*x0^2*x1^2*x2^2 + x1^2*x2^2 - 6*x0*x1*x2^2 + 3*x2^2 - 6*x0*x1^2*x2 - 6*x0^2*x1*x2 + 4*x1*x2 + 6*x0*x2 + 3*x1^2 + 6*x0*x1 + 3*x0^2 + 1 > 0], Reals]
+theory lemma
+b1
+m_xk: 2, skoY
+new valid clause:
+3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0
+resolving 3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0
+3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0
+resolving b1
+b1
+New lemma
+
+=========================
+New lemma
+
+=========================
+empty clause generated
+true
+!(3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0)
+skoZ skoX skoY - skoY - skoX - skoZ > 0 or !(skoY < 0)
+!(skoY < 0) or !(skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0)
+!(skoZ skoX skoY - skoY - skoX - skoZ > 0) or skoY < 0 or !(skoX^3 skoY^2 + 3 skoX skoY^2 - skoZ skoX^3 skoY + 3 skoX^2 skoY - 3 skoZ skoX skoY + skoX^3 + skoZ skoX^2 + 3 skoZ > 0)
+skoZ > 0
+skoX + 1 > 0
+skoY - 1 < 0
+skoY - skoX > 0
+Lemmas:
+!(skoZ > 0) or !(4 skoZ^2 + 4 > 0) or !(skoZ skoX - 1 < 0) or !(skoX < root[1](skoZ skoX - 1)) or !(skoZ skoX^2 - 2 skoX - skoZ < 0) or !(skoZ skoX skoY - skoY - skoX - skoZ > 0)
+assignment:
+b0 -> true
+b1 3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0 -> true
+b2 skoZ skoX skoY - skoY - skoX - skoZ > 0 -> false
+b3 skoY < 0 -> false
+b6 skoZ > 0 -> true
+b7 skoX + 1 > 0 -> true
+b8 skoY - 1 < 0 -> true
+b9 skoY - skoX > 0 -> true
+b0 -> l_true 
+b1 -> l_true 3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0
+b2 -> l_false skoZ skoX skoY - skoY - skoX - skoZ > 0
+b3 -> l_false skoY < 0
+b4 -> l_undef skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0
+b5 -> l_undef skoX^3 skoY^2 + 3 skoX skoY^2 - skoZ skoX^3 skoY + 3 skoX^2 skoY - 3 skoZ skoX skoY + skoX^3 + skoZ skoX^2 + 3 skoZ > 0
+b6 -> l_true skoZ > 0
+b7 -> l_true skoX + 1 > 0
+b8 -> l_true skoY - 1 < 0
+b9 -> l_true skoY - skoX > 0
+b10 -> l_undef 4 skoZ^2 + 4 > 0
+b11 -> l_undef skoZ skoX - 1 < 0
+b12 -> l_undef skoZ skoX^2 - 2 skoX - skoZ < 0
+b13 -> l_undef skoX < root[1](skoZ skoX - 1)
+skoZ -> 1
+skoX -> 0
+---
+dec: 1 1 3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0
+dec: 1 0 3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0
+del: b1 0 3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0
+dec: 2 2 skoZ skoX skoY - skoY - skoX - skoZ > 0
+dec: 3 2 skoY < 0
+dec: 3 1 skoY < 0
+dec: 4 0 skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0
+del: b4 0 skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0
+dec: 2 1 skoZ skoX skoY - skoY - skoX - skoZ > 0
+dec: 3 0 skoY < 0
+del: b3 0 skoY < 0
+dec: 5 0 skoX^3 skoY^2 + 3 skoX skoY^2 - skoZ skoX^3 skoY + 3 skoX^2 skoY - 3 skoZ skoX skoY + skoX^3 + skoZ skoX^2 + 3 skoZ > 0
+del: b5 0 skoX^3 skoY^2 + 3 skoX skoY^2 - skoZ skoX^3 skoY + 3 skoX^2 skoY - 3 skoZ skoX skoY + skoX^3 + skoZ skoX^2 + 3 skoZ > 0
+dec: 6 1 skoZ > 0
+dec: 7 0 skoX + 1 > 0
+del: b7 0 skoX + 1 > 0
+dec: 8 0 skoY - 1 < 0
+del: b8 0 skoY - 1 < 0
+dec: 9 0 skoY - skoX > 0
+del: b9 0 skoY - skoX > 0
+dec: 6 0 skoZ > 0
+del: b6 0 skoZ > 0
+dec: 10 0 4 skoZ^2 + 4 > 0
+del: b10 0 4 skoZ^2 + 4 > 0
+dec: 11 0 skoZ skoX - 1 < 0
+del: b11 0 skoZ skoX - 1 < 0
+dec: 13 0 skoX < root[1](skoZ skoX - 1)
+del: b13 0 skoX < root[1](skoZ skoX - 1)
+dec: 12 0 skoZ skoX^2 - 2 skoX - skoZ < 0
+del: b12 0 skoZ skoX^2 - 2 skoX - skoZ < 0
+dec: 2 0 skoZ skoX skoY - skoY - skoX - skoZ > 0
+del: b2 0 skoZ skoX skoY - skoY - skoX - skoZ > 0
+unsat

@@ -1,0 +1,309 @@
+display clauses
+true
+!(3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0)
+skoZ skoX skoY - skoY - skoX - skoZ > 0 or !(skoY < 0)
+!(skoY < 0) or !(skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0)
+!(skoZ skoX skoY - skoY - skoX - skoZ > 0) or skoY < 0 or !(skoX^3 skoY^2 + 3 skoX skoY^2 - skoZ skoX^3 skoY + 3 skoX^2 skoY - 3 skoZ skoX skoY + skoX^3 + skoZ skoX^2 + 3 skoZ > 0)
+skoZ > 0
+skoX + 1 > 0
+skoY - 1 < 0
+skoY - skoX > 0
+
+assigning literal: true <- true
+
+process arith clauses
+display clauses
+skoZ > 0
+
+get clauses inf start
+get infeasible set for clause skoZ > 0
+no assigned arith variable
+
+infeasible set for clause skoZ > 0 is {(-oo, p6, 0]}
+get clauses inf done
+m_xk: 0
+skoZ
+infeasible set: {(-oo, p6, 0]}
+path case
+choose appointed value: 1
+save path finder trail for var 0
+process clauses app start
+assigning literal: skoZ > 0 <- skoZ > 0
+
+process clauses app done
+infeasible intervals: {(-oo, p6, 0]}
+clause infeasible intervals: {(-oo, p6, 0]}
+assigning skoZ(x0) -> 1
+process arith clauses
+display clauses
+skoX + 1 > 0
+
+get clauses inf start
+get infeasible set for clause skoX + 1 > 0
+x0 := 1
+
+infeasible set for clause skoX + 1 > 0 is {(-oo, p7, -1]}
+get clauses inf done
+m_xk: 1
+skoX
+infeasible set: {(-oo, p7, -1]}
+path case
+choose appointed value: 0
+save path finder trail for var 1
+process clauses app start
+assigning literal: skoX + 1 > 0 <- skoX + 1 > 0
+
+process clauses app done
+infeasible intervals: {(-oo, p7, -1]}
+clause infeasible intervals: {(-oo, p7, -1]}
+assigning skoX(x1) -> 0
+process arith clauses
+display clauses
+skoZ skoX skoY - skoY - skoX - skoZ > 0 or !(skoY < 0)
+!(skoY < 0) or !(skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0)
+skoY - 1 < 0
+skoY - skoX > 0
+!(3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0)
+!(skoZ skoX skoY - skoY - skoX - skoZ > 0) or skoY < 0 or !(skoX^3 skoY^2 + 3 skoX skoY^2 - skoZ skoX^3 skoY + 3 skoX^2 skoY - 3 skoZ skoX skoY + skoX^3 + skoZ skoX^2 + 3 skoZ > 0)
+
+get clauses inf start
+get infeasible set for clause skoZ skoX skoY - skoY - skoX - skoZ > 0 or !(skoY < 0)
+x0 := 1
+x1 := 0
+
+infeasible set for clause skoZ skoX skoY - skoY - skoX - skoZ > 0 or !(skoY < 0) is {[-1, ~p3, 0)}
+get infeasible set for clause !(skoY < 0) or !(skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0)
+x0 := 1
+x1 := 0
+
+infeasible set for clause !(skoY < 0) or !(skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0) is {}
+get infeasible set for clause skoY - 1 < 0
+x0 := 1
+x1 := 0
+
+infeasible set for clause skoY - 1 < 0 is {[1, p8, oo)}
+get infeasible set for clause skoY - skoX > 0
+x0 := 1
+x1 := 0
+
+infeasible set for clause skoY - skoX > 0 is {(-oo, p9, 0]}
+get infeasible set for clause !(3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0)
+x0 := 1
+x1 := 0
+
+infeasible set for clause !(3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0) is {(-oo, p2147483647, oo)}*
+get infeasible set for clause !(skoZ skoX skoY - skoY - skoX - skoZ > 0) or skoY < 0 or !(skoX^3 skoY^2 + 3 skoX skoY^2 - skoZ skoX^3 skoY + 3 skoX^2 skoY - 3 skoZ skoX skoY + skoX^3 + skoZ skoX^2 + 3 skoZ > 0)
+x0 := 1
+x1 := 0
+
+infeasible set for clause !(skoZ skoX skoY - skoY - skoX - skoZ > 0) or skoY < 0 or !(skoX^3 skoY^2 + 3 skoX skoY^2 - skoZ skoX^3 skoY + 3 skoX^2 skoY - 3 skoZ skoX skoY + skoX^3 + skoZ skoX^2 + 3 skoZ > 0) is {}
+get clauses inf done
+m_xk: 2
+skoY
+infeasible set: {(-oo, p2147483647, oo)}*
+full case
+save path block trail for var 2
+assigning literal: skoZ skoX skoY - skoY - skoX - skoZ > 0 <- decision
+
+assigning literal: skoY < 0 <- skoY < 0 or !(skoZ skoX skoY - skoY - skoX - skoZ > 0)
+
+assigning literal: !(skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0) <- !(skoZ skoX skoY - skoY - skoX - skoZ > 0) or !(skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0)
+!(skoZ skoX skoY - skoY - skoX - skoZ > 0) or skoY < 0 or !(skoX^3 skoY^2 + 3 skoX skoY^2 - skoZ skoX^3 skoY + 3 skoX^2 skoY - 3 skoZ skoX skoY + skoX^3 + skoZ skoX^2 + 3 skoZ > 0)
+
+assigning literal: skoY - 1 < 0 <- !(skoZ skoX skoY - skoY - skoX - skoZ > 0) or skoY - 1 < 0
+!(skoZ skoX skoY - skoY - skoX - skoZ > 0) or skoY < 0 or !(skoX^3 skoY^2 + 3 skoX skoY^2 - skoZ skoX^3 skoY + 3 skoX^2 skoY - 3 skoZ skoX skoY + skoX^3 + skoZ skoX^2 + 3 skoZ > 0)
+
+assigning literal: !(skoY - skoX > 0) <- !(skoY - skoX > 0) or !(skoZ skoX skoY - skoY - skoX - skoZ > 0)
+
+process done
+enter resolve...
+resolve, conflicting clause:
+skoY - skoX > 0
+xk: skoY
+scope_lvl: 1
+current assignment
+b0 -> true
+b2 skoZ skoX skoY - skoY - skoX - skoZ > 0 -> true
+b3 skoY < 0 -> true
+b4 skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0 -> false
+b6 skoZ > 0 -> true
+b7 skoX + 1 > 0 -> true
+b8 skoY - 1 < 0 -> true
+b9 skoY - skoX > 0 -> false
+skoZ -> 1
+skoX -> 0
+new lemma:
+!(4 skoZ^2 + 4 > 0) or !(skoZ > 0) or !(skoZ skoX - 1 < 0) or !(skoZ skoX^2 - 2 skoX - skoZ < 0) or !(skoX < root[1](skoZ skoX - 1)) or !(skoZ skoX skoY - skoY - skoX - skoZ > 0)
+found_decision: 1
+backtracking to new level: 0, curr: 1
+trail[0]: b0
+trail[1]: new stage
+trail[2]: path finder for var 0 skoZ
+trail[3]: b6
+trail[4]: infeasible update
+trail[5]: new stage
+trail[6]: path finder for var 1 skoX
+trail[7]: b7
+trail[8]: infeasible update
+trail[9]: new stage
+trail[10]: path block for var 2 skoY
+trail[11]: new level
+trail[12]: b2
+trail[13]: infeasible update
+trail[14]: b3
+trail[15]: b4
+trail[16]: b8
+trail[17]: b9
+
+after undo until level
+m_xk = 2
+b0 -> true
+b6 skoZ > 0 -> true
+b7 skoX + 1 > 0 -> true
+skoZ -> 1
+skoX -> 0
+
+trail[0]: b0
+trail[1]: new stage
+trail[2]: path finder for var 0 skoZ
+trail[3]: b6
+trail[4]: infeasible update
+trail[5]: new stage
+trail[6]: path finder for var 1 skoX
+trail[7]: b7
+trail[8]: infeasible update
+trail[9]: new stage
+trail[10]: path block for var 2 skoY
+
+new max var: 2
+skoY
+before undo until path block
+m_xk = 2
+b0 -> true
+b6 skoZ > 0 -> true
+b7 skoX + 1 > 0 -> true
+skoZ -> 1
+skoX -> 0
+
+trail[0]: b0
+trail[1]: new stage
+trail[2]: path finder for var 0 skoZ
+trail[3]: b6
+trail[4]: infeasible update
+trail[5]: new stage
+trail[6]: path finder for var 1 skoX
+trail[7]: b7
+trail[8]: infeasible update
+trail[9]: new stage
+trail[10]: path block for var 2 skoY
+
+after undo until path block
+m_xk = 2
+b0 -> true
+b6 skoZ > 0 -> true
+b7 skoX + 1 > 0 -> true
+skoZ -> 1
+skoX -> 0
+
+trail[0]: b0
+trail[1]: new stage
+trail[2]: path finder for var 0 skoZ
+trail[3]: b6
+trail[4]: infeasible update
+trail[5]: new stage
+trail[6]: path finder for var 1 skoX
+trail[7]: b7
+trail[8]: infeasible update
+trail[9]: new stage
+
+save path block trail for var 2
+assigning literal: skoZ skoX skoY - skoY - skoX - skoZ > 0 <- decision
+
+assigning literal: skoY < 0 <- skoY < 0 or !(skoZ skoX skoY - skoY - skoX - skoZ > 0)
+
+assigning literal: !(skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0) <- !(skoZ skoX skoY - skoY - skoX - skoZ > 0) or !(skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0)
+!(skoZ skoX skoY - skoY - skoX - skoZ > 0) or skoY < 0 or !(skoX^3 skoY^2 + 3 skoX skoY^2 - skoZ skoX^3 skoY + 3 skoX^2 skoY - 3 skoZ skoX skoY + skoX^3 + skoZ skoX^2 + 3 skoZ > 0)
+
+assigning literal: skoY - 1 < 0 <- !(skoZ skoX skoY - skoY - skoX - skoZ > 0) or skoY - 1 < 0
+!(skoZ skoX skoY - skoY - skoX - skoZ > 0) or skoY < 0 or !(skoX^3 skoY^2 + 3 skoX skoY^2 - skoZ skoX^3 skoY + 3 skoX^2 skoY - 3 skoZ skoX skoY + skoX^3 + skoZ skoX^2 + 3 skoZ > 0)
+
+assigning literal: !(skoY - skoX > 0) <- !(skoY - skoX > 0) or !(skoZ skoX skoY - skoY - skoX - skoZ > 0)
+
+assigning literal: 3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0 <- 3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0
+
+resolve, conflicting clause:
+!(skoZ > 0) or !(4 skoZ^2 + 4 > 0) or !(skoZ skoX - 1 < 0) or !(skoX < root[1](skoZ skoX - 1)) or !(skoZ skoX^2 - 2 skoX - skoZ < 0) or !(skoZ skoX skoY - skoY - skoX - skoZ > 0)
+xk: skoY
+scope_lvl: 1
+current assignment
+b0 -> true
+b1 3 skoZ^2 skoX^2 skoY^2 + skoX^2 skoY^2 - 6 skoZ skoX skoY^2 + 3 skoY^2 - 6 skoZ skoX^2 skoY - 6 skoZ^2 skoX skoY + 4 skoX skoY + 6 skoZ skoY + 3 skoX^2 + 6 skoZ skoX + 3 skoZ^2 + 1 > 0 -> true
+b2 skoZ skoX skoY - skoY - skoX - skoZ > 0 -> true
+b3 skoY < 0 -> true
+b4 skoZ skoX skoY - skoX skoY - skoY - skoX - skoZ + 1 < 0 -> false
+b6 skoZ > 0 -> true
+b7 skoX + 1 > 0 -> true
+b8 skoY - 1 < 0 -> true
+b9 skoY - skoX > 0 -> false
+skoZ -> 1
+skoX -> 0
+new lemma:
+!(skoZ > 0) or !(4 skoZ^2 + 4 > 0) or !(skoZ skoX - 1 < 0) or !(skoX < root[1](skoZ skoX - 1)) or !(skoZ skoX^2 - 2 skoX - skoZ < 0) or !(skoZ skoX skoY - skoY - skoX - skoZ > 0)
+found_decision: 1
+backtracking to new level: 0, curr: 1
+trail[0]: b0
+trail[1]: new stage
+trail[2]: path finder for var 0 skoZ
+trail[3]: b6
+trail[4]: infeasible update
+trail[5]: new stage
+trail[6]: path finder for var 1 skoX
+trail[7]: b7
+trail[8]: infeasible update
+trail[9]: new stage
+trail[10]: path block for var 2 skoY
+trail[11]: new level
+trail[12]: b2
+trail[13]: infeasible update
+trail[14]: b3
+trail[15]: b4
+trail[16]: b8
+trail[17]: b9
+trail[18]: b1
+
+after undo until level
+m_xk = 2
+b0 -> true
+b6 skoZ > 0 -> true
+b7 skoX + 1 > 0 -> true
+skoZ -> 1
+skoX -> 0
+
+trail[0]: b0
+trail[1]: new stage
+trail[2]: path finder for var 0 skoZ
+trail[3]: b6
+trail[4]: infeasible update
+trail[5]: new stage
+trail[6]: path finder for var 1 skoX
+trail[7]: b7
+trail[8]: infeasible update
+trail[9]: new stage
+trail[10]: path block for var 2 skoY
+
+assigning literal: !(skoZ skoX skoY - skoY - skoX - skoZ > 0) <- !(skoZ > 0) or !(4 skoZ^2 + 4 > 0) or !(skoZ skoX - 1 < 0) or !(skoX < root[1](skoZ skoX - 1)) or !(skoZ skoX^2 - 2 skoX - skoZ < 0) or !(skoZ skoX skoY - skoY - skoX - skoZ > 0)
+
+infeasible intervals: {(-oo, ~p2, -1)}
+clause infeasible intervals: {}
+assigning skoY(x2) -> 0
+found model
+b0 -> true
+b2 skoZ skoX skoY - skoY - skoX - skoZ > 0 -> false
+b6 skoZ > 0 -> true
+b7 skoX + 1 > 0 -> true
+skoZ -> 1
+skoX -> 0
+skoY -> 0
+
+sat
+(error "line 26 column 10: check annotation that says unsat")

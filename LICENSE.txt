@@ -1,0 +1,12 @@
+License
+
+Copyright (c) 2024 Zhonghan Wang
+
+Permission is hereby granted, free of charge, to the Artifact Evaluation Chairs of the VMCAI 2025 conference to download and distribute the artifact to the members of the Artifact Evaluation Committee (AEC) solely for the purpose of artifact evaluation.
+The members of the AEC are allowed to use, execute, and modify the artifact strictly for the purpose of evaluating it in the context of VMCAI 2025. 
+This license is granted exclusively for VMCAI 2025 and shall not extend beyond the scope of this conference or to any other persons or organizations outside the VMCAI 2025 AEC.
+The artifact must not be used, distributed, or modified for any other purpose or by any parties other than the AEC members of VMCAI 2025.
+
+This license expires upon the completion of the VMCAI 2025 artifact evaluation process.
+
+DISCLAIMER OF WARRANTY: THE ARTIFACT IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.
