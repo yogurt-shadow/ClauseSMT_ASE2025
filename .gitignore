@@ -1,0 +1,10 @@
+*.zip
+QF_NRA/
+*.md
+*.png
+*.jpg
+self_data/
+self_results/
+script/parallel_run
+csv/
+.vscode

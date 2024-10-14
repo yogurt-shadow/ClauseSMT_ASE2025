@@ -8,13 +8,9 @@
 
 using namespace std;
 
-const string default_instance_list_path = "../QF_NRA/list.txt";
-const string default_solver_path = "../binary_solvers/z3";
-const string default_output_path = "../self_data";
-
-const string time_limit = "1200";
-const string memory_limit = "30720";
-const int max_process_num = 120;
+string instance_list_path, solver_path, output_path;
+string time_limit, memory_limit;
+int max_process_num;
 
 string getPath(const string &str) {
     int start = -1, end = -1;
@@ -35,10 +31,8 @@ private:
     string cmd;
 public:
     bool run() {
-        // cout << "## cmd: " << cmd << endl;
         if (system(cmd.c_str()) != 0) {
             cout << "system error: " << cmd << endl;
-            // exit(1);
             return false;
         }
         return true;
@@ -104,27 +98,13 @@ public:
     void get_next_job() {
         ++ite;
     }
-    // void config_z3_parameters(const int &seed, const int &tl) {
-    //     time_limit = tl;
-    //     if (seed == -1) {
-    //         nlsat_shuffle_vars = false;
-    //         nlsat_seed = 0;
-    //     }
-    //     else {
-    //         nlsat_shuffle_vars = true;
-    //         nlsat_seed = seed;
-    //     }
-    // }
+
     void child_process() {
         const string &job = vec_job[ite];
-
         stringstream ss;
         ss << "file[" << ite << "] = " << job;
         string tag = ss.str();
-
-        // config_z3_parameters(-1, 1200);
         sch.run_z3_cmd(job);
-
         cout << "finish: " << tag << endl;
         exit(0);
     }
@@ -134,9 +114,6 @@ public:
             ss << "file[" << job_id << "] = " << vec_job[job_id];
             string tag = ss.str();
             cout << "error: " << tag << endl;
-        }
-        else {
-            // cout << "main catch finish: " << tag << endl;
         }
     }
 };
@@ -161,16 +138,6 @@ public:
                 dict_proc_id.erase(x.first);
                 break;
             }
-            // else if (child_pid > 0) { // child process finished
-            //     assert(child_pid == x.second);
-            //     func.process_finished_child(x.first, sta);
-            //     dict_proc_id.erase(x.second);
-            //     break;
-            // }
-            // else {
-            //     cout << "waitpid error [" << x.first << ", " << x.second << "], child_pid = " << child_pid << endl;
-            //     assert(false);
-            // }
         }
     }
     void solve(T &func) {
@@ -191,18 +158,10 @@ public:
             }
             else {
                 unsigned job_id = func.get_cur_job_id();
-
-                // stringstream ss;
-                // ss << "file[" << job_id << "] = " << vec_job[job_id] << "pid = " << pid;
-                // string tag = ss.str();
-                // cout << "debug: " << tag << endl;
-                
                 dict_proc_id[job_id] = pid;
-                // sleep(1);
                 is_parent = true;
                 while (dict_proc_id.size() >= max_proc_num) {
                     handle_finished_process(func);
-                    // sleep(1);
                 }
             }
             func.get_next_job();
@@ -210,7 +169,6 @@ public:
         if (!is_parent) return ;
         while (!dict_proc_id.empty()) {
             handle_finished_process(func);
-            // sleep(1);
         }
     }
 };
@@ -231,41 +189,25 @@ void shuffle_jobs(T &vec) {
 void solve() {
     System_Comand_Helper sch;
     vector<string> vec_job;
-    
-    // sch.run_mkdir_cmd(output_dir_pre_path);
     get_jobs(sch, vec_job);
-
     shuffle_jobs(vec_job);
-
-    // sch.run_mkdir_cmd(output_path);
-
     cout << "vec file size: " << vec_job.size() << endl;
-    
-    // output_dir_path = output_dir_pre_path;
-
-    // sch.run_mkdir_cmd(output_dir_path);
-
-    // set<string> vis_set;
-    // for (const string &job : vec_job) {
-    //     string pre_path = get_file_pre_path(get_instance_output_path(job));
-    //     if (vis_set.count(pre_path) == 0) {
-    //         sch.run_mkdir_cmd(pre_path);
-    //         vis_set.emplace(pre_path);
-    //     }
-    // }
-
     Process_Pool<Z3_Multiprocess_Runner> pp(max_process_num);
     Z3_Multiprocess_Runner z3mr(sch, vec_job);
     pp.solve(z3mr);
 }
 
 int main(int argc, char **argv) {
-    if(argc < 4) {
-        cout << "Usage: ./parallel_run [instance_list_path] [solver_path] [output_path]" << endl;
+    if(argc != 7) {
+        cout << "Usage: ./parallel_run [instance_list_path] [solver_path] [output_path] [time_limit] [memory_limit] [max_process_num]" << endl;
+        return 1;
     }
-    string instance_list_path = argv[1];
-    string solver_path = argv[2];
-    string output_path = argv[3];
+    instance_list_path = argv[1];
+    solver_path = argv[2];
+    output_path = argv[3];
+    time_limit = argv[4];
+    memory_limit = argv[5];
+    max_process_num = atoi(argv[6]);
     struct stat st;
     if (stat(output_path.c_str(), &st) == -1) {
         cout << "mkdir " << output_path << endl;

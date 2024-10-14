@@ -1,84 +1,58 @@
-import os
-import sys
-import csv
+import os, sys
 
-# 20161105-Sturm-MBO/mbo_E10E24.smt2
-def process_name(file):
-    split_parts = file.split('/')
-    family_name, file_name_pre = split_parts[0], split_parts[-1]
-    file_name = file_name_pre.rsplit('.', 1)[0]
-    return file_name, family_name
+class DataPoint:
+    # Benchmark, Result, Time, Memory
+    def __init__(self, name):
+        self.name = name
+        self.result, self.time, self.memory = None, None, None
 
+def process_point(name, lines):
+    dp = DataPoint(name)
+    if "unsat" in lines[0]:
+        dp.result = "unsat"
+    elif "sat" in lines[0]:
+        dp.result = "sat"
+    else:
+        dp.result = "unknown"
+    for i in range(1, len(lines)):
+        lines[i].replace(')', '')
+        lines[i].strip()
+        if ":time" in lines[i]:
+            dp.time = float(lines[i].split(' ')[-1])
+        elif ":memory" in lines[i]:
+            dp.memory = float(lines[i].split(' ')[-1])
+    return dp 
 
-'''
-benchmark   family    result
-'''
-def collect_infos(folder, files, data):
-    data.append(["benchmark", "family", "result", "time", "memory", "conflict", "decision", "stage"])
-    timeout, total, sat, unsat, unknown = 0, 0, 0, 0, 0
-    for file in files:
-        total += 1
-        file_name, family_name = process_name(file)
-        num_line = 0
-        _memory, _time, _conflict, _decision, _stage = 0, 0, 0, 0, 0
-        for line in open(folder + file_name + ".txt", 'r', encoding='utf-8'):
-            line = line.strip()
-            if num_line == 0:
-                res = line
-                if res == "timeout":
-                    timeout += 1
-                elif res == "sat":
-                    sat += 1
-                elif res == "unsat":
-                    unsat += 1
-                else:
-                    unknown += 1
-            else:
-                elements = line.split()
-                if len(elements) > 1 and elements[0] == ":memory":
-                    curr = elements[1]
-                    if curr[-1] == ')':
-                        curr = curr[0:-1]
-                    _memory = float(curr)
-                elif len(elements) > 1 and elements[0] == ":time":
-                    curr = elements[1]
-                    if curr[-1] == ')':
-                        curr = curr[0:-1]
-                    _time = float(curr)
-                elif len(elements) > 1 and elements[0] == ":nlsat-conflicts":
-                    curr = elements[1]
-                    if curr[-1] == ')':
-                        curr = curr[0:-1]
-                    _conflict = float(curr)
-                elif len(elements) > 1 and elements[0] == ":nlsat-decisions":
-                    curr = elements[1]
-                    if curr[-1] == ')':
-                        curr = curr[0:-1]
-                    _decision = float(curr)
-                elif len(elements) > 1 and elements[0] == ":nlsat-stages":
-                    curr = elements[1]
-                    if curr[-1] == ')':
-                        curr = curr[0:-1]
-                    _stage = float(curr)
-            num_line += 1
-        data.append([file_name, family_name, res, _time, _memory, _conflict, _decision, _stage])
-    data.append([])
-    data.append(["total", "sat", "unsat", "solved", "timeout", "unsolved"])
-    data.append([total, sat, unsat, sat + unsat, timeout, unknown])
-    print("sat: ", sat)
-    print("unsat: ", unsat)
-    print("solved: ", sat + unsat)
-    print("total: ", total)
-    
 if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        print("Usage: python collect.py <folder> <output>")
+        sys.exit(1)
+    dps = {}
+    total, sat, unsat, solved, unsolved = 0, 0, 0, 0, 0
     folder = sys.argv[1]
-    result = sys.argv[2]
-    if os.path.exists(result):
-        os.remove(result)
-    file_names = [line.strip() for line in open("list.txt", "r").readlines()]
-    data = []
-    collect_infos(folder, file_names, data)
-    with open(result, "w") as csvfile:
-        writer = csv.writer(csvfile)
-        writer.writerows(data)
-    
+    files = os.listdir(folder)
+    for file in files:
+        file_name = file.replace('.txt', '')
+        lines = open(folder + '/' + file).readlines()
+        dps[file_name] = process_point(file_name, lines)
+    output_file = open(sys.argv[2], 'w')
+    output_file.write("Benchmark Result Time Memory\n")
+    for name in dps:
+        dp = dps[name]
+        output_file.write(f"{dp.name} {dp.result} {dp.time} {dp.memory}\n")
+        if dp.result == "sat":
+            sat += 1
+        elif dp.result == "unsat":
+            unsat += 1
+        if dp.result != "unknown":
+            solved += 1
+        else:
+            unsolved += 1
+        total += 1
+    output_file.close()
+    print("Done!")
+    print(f"Total: {total}")
+    print(f"Solved: {solved}")
+    print(f"Unsolved: {unsolved}")
+    print(f"Sat: {sat}")
+    print(f"Unsat: {unsat}")
