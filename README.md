@@ -1,6 +1,4 @@
-# Artefact of "ClauseSMT: Clause Level NLSAT for Nonlinear Real Arithmetic"
-
-Author: Zhonghan Wang (wangzh@ios.ac.cn)
+# Artefact of "Improving NLSAT for Nonlinear Real Arithmetic"
 
 ## Structure of the Artefact
 1. **binary_solvers:** The pre-compiled binary files of different versions of our solver and other existing solvers.

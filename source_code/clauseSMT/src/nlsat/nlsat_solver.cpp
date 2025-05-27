@@ -23,7 +23,6 @@ Revision History:
  * ---------------------------------------------------------------------------------------------------------------
  * @name HDnlsat: Hybrid Dynamic Nonlinear Arithmetic Satisfiability Procedure
  * @date start time: 2022/09/23
- * @author Zhonghan Wang (wzh)
  * @brief This version supports arbitrary order of hybrid boolean var and arith var
  * 
  * @note Implementation Note
