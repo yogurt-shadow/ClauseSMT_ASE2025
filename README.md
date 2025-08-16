@@ -1,15 +1,22 @@
-# Artefact of "Improving NLSAT for Nonlinear Real Arithmetic"
+# ClauseSMT (ASE'2025): Artefact of "Improving NLSAT for Nonlinear Real Arithmetic"
+
+Author: Zhonghan Wang (https://yogurt-shadow.github.io/)
+
+work done during master student
+
+Email: wangzhonghan272@gmail.com (personal)
 
 ## Structure of the Artefact
+This artefact is intended to compare the sequential performance of our solver `clauseSMT` with other mainstream SMT solvers.
+
 1. **binary_solvers:** The pre-compiled binary files of different versions of our solver and other existing solvers.
 2. **experiment_data:** Our experimental results on the QF_NRA benchmark.
 3. **script:** The scripts for generating the file path list and running the experiments.
 4. **source_code:** The source code of different versions of our solver.
-5. **paper.pdf:** The research paper.
-6. **README:** This file.
-7. **LICENSE.txt:** The license of the artefact.
+5. **README:** This file.
+6. **LICENSE:** MIT License of the artefact.
 
-## 0. Environment Dependencies
+## 0. Build Docker
 We recommend the user to conduct the experiment on **Linux or Windows WSL**.
 
 To fully reproduce our experimental results, we highly recommend the user to get an external server for the parallel computing usage.
@@ -19,47 +26,50 @@ Besides, several dependencies shown below are required:
 2. Python
 3. G++, or other C++ compilers like Clang
 
-## 1. Download Benchmark
-We provide the benchmark in our Google drive link
-https://drive.google.com/file/d/1Nc7IQEeeTFXFdrrVp6pKLkMbwv7ISc99/view?usp=sharing
+## Step 1. Preparing Benchmark
+PThe benchmark used in our paper is SMT-LIB for QF_NRA (2023 version)
+https://zenodo.org/records/10607722/files/QF_NRA.tar.zst?download=1
 
-One should unzip the file to get the `QF_NRA` directory.
+You are free to browse other versions of SMT-LIB:
+https://zenodo.org/communities/smt-lib/records?q=&l=list&p=1&s=10
 
 ```
-unzip QF_NRA.zip
+wget https://zenodo.org/records/10607722/files/QF_NRA.tar.zst?download=1 -O QF_NRA.tar.zst
+tar -I zstd -xvf QF_NRA.tar.zst
+mv non-incremental/QF_NRA .
+rm -rf non-incremental
+rm -rf QF_NRA.tar.zst
 ```
 After this step, the folder structure should look like this:
 ![structure](./pictures/image-1.png)
 
-## 2. Generate File Path List
+## Step 2. Generate File Path List
 To fully evaluate our solver on the whole benchmark, we should generate the absolute paths for all instances.
 
 ```
 cd script
-python generate_list.py ../QF_NRA/
+python3 generate_list.py ../QF_NRA/
 ```
-The generated absolute paths are stored in `QF_NRA/list.txt` with 12134 lines.
+The generated absolute paths are stored in `QF_NRA/list.txt` like below.
 
 ![list](pictures/image-2.png)
 
-## 3. Compilation and Binary Files
+## Step 3. Compile and Build
 There are two ways to use our smt solver, either compile the source code or just use the binary files.
 ### 3.1 Compilation from Source Code
-To compile the source code, we provide a script `script/mk_make.py` to generate the makefile and compile the source code.
+To compile the source code, run the following command
 
 ```
-cd source_code/clauseSMT
-python scripts/mk_make.py
-cd build
-make -j <thread_num>
+cd script
+bash compile.sh <solver_name> <num_thread>
 ```
-After this, a binary file `z3` will be generated in the `build` directory.
+Here `solver_name` should be different versions of clauseSMT in `source_code/`, for example `clauseSMT`, `nlsat` or `static-look-ahead`
 
 ### 3.2 Binary Files
 We also provide the pre-compiled binary files of our solver and other SMT solvers in `binary_solvers/`.
 
 ### 3.3 Test the Binary Files
-We provide a simple smt instance `example.smt2` for testing the binary files.
+We provide a simple smt instance `example.smt2` for testing the binary files. Please run the following commands to ensure you successfully build the tool.
 1. Compiled Binary Files
 ```
 ./source_code/clauseSMT/build/z3 example.smt2
@@ -78,7 +88,7 @@ cd script
 g++ -O3 -o parallel_run parallel_run.cpp
 ./parallel_run [instance_list_path] [solver_path] [output_path] [time_limit] [memory_limit] [max_process_num]
 ```
-where `instance_list_path` is the path to the list file of test cases, `solver_path` is the path to the solver binary file, `output_path` is the path to collect the results, `time_limit` is the time limit (seconds) for each instance, `memory_limit` is the memory limit (MB) for each instance, and `max_process_num` is the maximum number of processes to run in parallel.
+where `instance_list_path` is the path to the list file of test cases , `solver_path` is the path to the solver binary file, `output_path` is the path to collect the results, `time_limit` is the time limit (seconds) for each instance, `memory_limit` is the memory limit (MB) for each instance, and `max_process_num` is the maximum number of processes to run in parallel.
 
 A recommended setting for the external server is:
 ```
