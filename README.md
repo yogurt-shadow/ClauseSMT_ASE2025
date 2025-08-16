@@ -21,10 +21,16 @@ We recommend the user to conduct the experiment on **Linux or Windows WSL**.
 
 To fully reproduce our experimental results, we highly recommend the user to get an external server for the parallel computing usage.
 
-Besides, several dependencies shown below are required:
-1. AR archiving tool
-2. Python
-3. G++, or other C++ compilers like Clang
+Run the following command in the project root directory (where the `Dockerfile` is located) to build the Docker image:
+
+```bash
+docker build -t clausesmt_env .
+```
+After building the image, start an interactive container with your project directory mounted inside:
+```bash
+docker run -it --rm -v $(pwd):/app clausesmt_env
+```
+Now you can execute all commands from the README inside the container without worrying about missing dependencies on your host system.
 
 ## Step 1. Preparing Benchmark
 PThe benchmark used in our paper is SMT-LIB for QF_NRA (2023 version)
