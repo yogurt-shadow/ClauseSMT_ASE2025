@@ -16,7 +16,7 @@ This artefact is intended to compare the sequential performance of our solver `c
 5. **README:** This file.
 6. **LICENSE:** MIT License of the artefact.
 
-## 0. Build Docker
+## Step 0. Build Docker
 We recommend the user to conduct the experiment on **Linux or Windows WSL**.
 
 To fully reproduce our experimental results, we highly recommend the user to get an external server for the parallel computing usage.
@@ -85,7 +85,7 @@ We provide a simple smt instance `example.smt2` for testing the binary files. Pl
 ./binary_solvers/clauseSMT example.smt2
 ```
 
-## 4. Run clauseSMT on the Benchmark
+## Step 4. Run clauseSMT on the Benchmark
 To fully get the experimental results, we provide a script `script/parallel_run.cpp` to run our solver on all instances in the benchmark with multiple threads. We strongly recommend the user to **use an external server** for the parallel computing usage.
 
 ```
@@ -114,7 +114,7 @@ If everything goes well, the `self_data` folder would contain txt files for each
 
 ![data](pictures/image-3.png)
 
-## 5. Collecting Results
+## Step 5. Collecting Results
 We provide a script `script/collect.py` to collect the results of all solvers on all test cases, and generate a csv file. The script takes two arguments:
 
 + **folder_path:** the path to the folder containing the results (for example: `../self_data/`)
@@ -129,10 +129,10 @@ Then the `csv/clauseSMT.csv` file would contain the results of our solver on all
 
 ![csv](pictures/image-4.png)
 
-## 6. Comparison with our results
+## Step 6. Comparison with our results
 We provide the experimental results of our solver on the whole benchmark in `experiment_data/`. The user can compare their results with ours to see the performance of our solver.
 
-## 7. Other SMT Solvers
+## Step 7. Other SMT Solvers
 We also provide the source code and binary files of other SMT solvers, including NLSAT, Z3, CVC5, Yices2, dReal, and MathSAT. The user can use these solvers to compare their results with ours, following the steps in the previous sections.
 
 
